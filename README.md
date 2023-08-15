@@ -1,17 +1,10 @@
 <br/>
-<br/>
-<br/>
 <p align="center">
-    <img alt="awesome" src="./banguelinha.png" width="100" style="border-radius: 100%;" />
+    <img alt="awesome" src="./banguelinha.png" width="90" />
 </p>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 
 
-## App
+## Pokemon App
 
 ### _🔧 Em Desenvolvimento..._
