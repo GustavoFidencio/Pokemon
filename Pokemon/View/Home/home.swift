@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Home: View {
-    
+        
     @ObservedObject private var viewModel : HomeViewModel = HomeViewModel()
     
     var body: some View {
@@ -22,7 +22,6 @@ struct Home: View {
                     
                 }
                 .padding()
-//                .background(Color.red)
             }
             .listStyle(PlainListStyle())
             .navigationTitle("Home")

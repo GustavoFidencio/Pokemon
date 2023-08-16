@@ -23,7 +23,6 @@ class HomeViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.nextPage = data.next
                     self.pokes = data.results!
-                    print(data)
                 }
             case .failure(let error):
                 print("Error 157:", error)
