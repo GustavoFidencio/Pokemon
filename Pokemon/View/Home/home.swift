@@ -15,11 +15,9 @@ struct Home: View {
         NavigationView {
             ScrollView{
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                    
                     ForEach(viewModel.pokes.indices, id: \.self){ item in
-                        HomeListItem()
+                        HomeListItem(Poke: viewModel.pokes[item])
                     }
-                    
                 }
                 .padding()
             }
@@ -27,6 +25,7 @@ struct Home: View {
             .navigationTitle("Home")
         }
         .onAppear {
+            print("papappa")
             viewModel.getPokes()
         }
     }

@@ -16,7 +16,6 @@ struct SpriteAnimated: Codable{
     let front_default: String?
     let back_shiny_female: String?
     let front_shiny_female: String?
-    
 }
 
 struct SpriteBlacWhite: Codable{
@@ -32,7 +31,6 @@ struct VersionsSprites: Codable{
 }
 
 struct Sprites: Codable{
-    
     let back_shiny: String?
     let front_shiny: String?
     let back_female: String?

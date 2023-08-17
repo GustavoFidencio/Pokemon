@@ -10,6 +10,11 @@ import Foundation
 struct SimplePoke: Codable {
     let url: String
     let name: String
+    
+    init(url: String, name: String) {
+        self.url = url
+        self.name = name
+    }
 }
 
 struct AllPokes: Codable {
