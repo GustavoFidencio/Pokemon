@@ -9,23 +9,14 @@ import SwiftUI
 
 struct Home: View {
         
-    @ObservedObject private var viewModel : HomeViewModel = HomeViewModel()
+    @ObservedObject var viewModel : HomeViewModel = HomeViewModel()
     
     var body: some View {
         NavigationView {
-            ScrollView{
-                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                    ForEach(viewModel.pokes.indices, id: \.self){ item in
-                        HomeListItem(Poke: viewModel.pokes[item])
-                    }
-                }
-                .padding()
-            }
-            .listStyle(PlainListStyle())
-            .navigationTitle("Home")
+            if viewModel.isLoad { Load() }
+            else { HomeList(pokes: viewModel.pokes) }
         }
         .onAppear {
-            print("papappa")
             viewModel.getPokes()
         }
     }

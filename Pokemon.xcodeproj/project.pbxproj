@@ -10,6 +10,9 @@
 		891216862A8E46C70071987F /* Captalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891216852A8E46C70071987F /* Captalize.swift */; };
 		892D53E82A8A90CA0039E9D4 /* home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D53E72A8A90CA0039E9D4 /* home.swift */; };
 		892D53F22A8AA24A0039E9D4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 892D53F12A8AA24A0039E9D4 /* Colors.xcassets */; };
+		894C23E52A8E8BE000CF4F82 /* HomeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894C23E42A8E8BE000CF4F82 /* HomeList.swift */; };
+		894C23E82A8E927D00CF4F82 /* Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894C23E72A8E927D00CF4F82 /* Load.swift */; };
+		894C23EA2A8E95EC00CF4F82 /* HomeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894C23E92A8E95EC00CF4F82 /* HomeImage.swift */; };
 		8950BC482A8524280072B07C /* PokemonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8950BC472A8524280072B07C /* PokemonApp.swift */; };
 		8950BC4C2A8524280072B07C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8950BC4B2A8524280072B07C /* Assets.xcassets */; };
 		8950BC4F2A8524280072B07C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8950BC4E2A8524280072B07C /* Preview Assets.xcassets */; };
@@ -26,6 +29,9 @@
 		891216852A8E46C70071987F /* Captalize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Captalize.swift; sourceTree = "<group>"; };
 		892D53E72A8A90CA0039E9D4 /* home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = home.swift; sourceTree = "<group>"; };
 		892D53F12A8AA24A0039E9D4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		894C23E42A8E8BE000CF4F82 /* HomeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeList.swift; sourceTree = "<group>"; };
+		894C23E72A8E927D00CF4F82 /* Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Load.swift; sourceTree = "<group>"; };
+		894C23E92A8E95EC00CF4F82 /* HomeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeImage.swift; sourceTree = "<group>"; };
 		8950BC442A8524280072B07C /* Pokemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8950BC472A8524280072B07C /* PokemonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonApp.swift; sourceTree = "<group>"; };
 		8950BC4B2A8524280072B07C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +65,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		894C23E62A8E926C00CF4F82 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				894C23E72A8E927D00CF4F82 /* Load.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		8950BC3B2A8524280072B07C = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +92,7 @@
 		8950BC462A8524280072B07C /* Pokemon */ = {
 			isa = PBXGroup;
 			children = (
+				894C23E62A8E926C00CF4F82 /* Components */,
 				896AF1372A8CF4C2004A6818 /* View */,
 				896AF12E2A8CF38E004A6818 /* Services */,
 				896AF1232A8CF242004A6818 /* Model */,
@@ -130,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				896AF1352A8CF47B004A6818 /* HomeListItem.swift */,
+				894C23E42A8E8BE000CF4F82 /* HomeList.swift */,
+				894C23E92A8E95EC00CF4F82 /* HomeImage.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -216,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				896AF12A2A8CF303004A6818 /* AllPokes.swift in Sources */,
+				894C23E82A8E927D00CF4F82 /* Load.swift in Sources */,
 				896AF1362A8CF47B004A6818 /* HomeListItem.swift in Sources */,
 				892D53E82A8A90CA0039E9D4 /* home.swift in Sources */,
 				891216862A8E46C70071987F /* Captalize.swift in Sources */,
@@ -223,6 +241,8 @@
 				896AF1252A8CF255004A6818 /* Pokemon.swift in Sources */,
 				89FD376B2A8BD9F100081D61 /* HomeViewModel.swift in Sources */,
 				896AF1272A8CF266004A6818 /* Sprites.swift in Sources */,
+				894C23E52A8E8BE000CF4F82 /* HomeList.swift in Sources */,
+				894C23EA2A8E95EC00CF4F82 /* HomeImage.swift in Sources */,
 				8950BC482A8524280072B07C /* PokemonApp.swift in Sources */,
 				896AF1302A8CF3A7004A6818 /* Api.swift in Sources */,
 			);

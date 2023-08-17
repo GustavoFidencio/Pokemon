@@ -28,15 +28,11 @@ class PokeViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.poke = data
                     self.isLoad.toggle()
-                    print(self.isLoad)
                 }
             case .failure(let error):
                 print("Error 157:", error)
                 self.isLoad.toggle()
-                print("ERRRR")
             }
         }
-        
     }
-    
 }
