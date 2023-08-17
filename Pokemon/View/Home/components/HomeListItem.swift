@@ -11,27 +11,42 @@ struct HomeListItem: View {
     
     private var Poke: SimplePoke
     @ObservedObject var viewModel: PokeViewModel
-
+    @State private var backgroundColor : String = "#000000"
+ 
     init(Poke: SimplePoke) {
         self.Poke = Poke
         self.viewModel = PokeViewModel(url: self.Poke.url)
     }
     
+    
+    private func getColor(_ name: String) {
+        let type = TypesPoke(rawValue: name.lowercased())
+        self.backgroundColor = ColorsTypes.getColor(type: type!)
+   }
+    
     var body: some View {
-        VStack {
-            if viewModel.isLoad {
-               Load()
-            } else {
-                HomeImage(poke: viewModel.poke)
-                Text(Poke.name.capitalize)
-                    .font(.headline)
+        ZStack {
+            Color(UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all)
+            Color(hex: backgroundColor).opacity(0.25).edgesIgnoringSafeArea(.all)
+            VStack {
+                if viewModel.isLoad {
+                    Load()
+                } else {
+                    HomeImage(poke: viewModel.poke)
+                    Text(Poke.name.capitalize)
+                        .font(.headline)
+                }
+            }
+            .padding(20)
+            .edgesIgnoringSafeArea(.all)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+        .cornerRadius(10)
+        .onChange(of: viewModel.isLoad) { newVal in
+            if !newVal {
+                getColor(viewModel.poke.types[0].type.name)
             }
         }
-        .padding(20)
-        .edgesIgnoringSafeArea(.all)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(UIColor.secondarySystemBackground))
-        .cornerRadius(10)
     }
 }
 

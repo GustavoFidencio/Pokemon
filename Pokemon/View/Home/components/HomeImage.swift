@@ -9,9 +9,9 @@ import SwiftUI
 
 struct HomeImage: View {
     
-    var poke : PokemonApi
+    var poke : Pokemon
     
-    init(poke: PokemonApi) {
+    init(poke: Pokemon) {
         self.poke = poke
     }
     

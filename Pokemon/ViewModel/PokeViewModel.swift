@@ -17,12 +17,12 @@ class PokeViewModel: ObservableObject {
     }
             
     @Published var isLoad: Bool = true
-    @Published var poke: PokemonApi = PokemonApi()
+    @Published var poke: Pokemon = Pokemon()
     
     private func getPoke(){
         let base = URL(string: self.url)!
         
-        Api.shared.fetch(base) { (result: Result<PokemonApi, Error>) in
+        Api.shared.fetch(base) { (result: Result<Pokemon, Error>) in
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {

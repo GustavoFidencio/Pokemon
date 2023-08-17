@@ -37,9 +37,7 @@ struct Sprites: Codable{
     let back_default: String?
     let front_female: String?
     let front_default: String?
+    let versions: VersionsSprites
     let back_shiny_female: String?
     let front_shiny_female: String?
-    
-    let versions: VersionsSprites
-    
 }
