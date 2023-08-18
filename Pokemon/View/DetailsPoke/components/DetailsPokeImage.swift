@@ -17,18 +17,20 @@ struct DetailsPokeImage: View {
     
     var body: some View {
         Group{
-            if let image = URL(string: poke.sprites?.versions.generationV?.blackWhite?.animated?.front_default! ?? poke.sprites?.front_default ?? "") {
-                    AsyncImage(url: image){ image in
-                        image
-                            .resizable()
-                            .scaledToFit()
-                    } placeholder: {
-                        VStack{
-                            Load()
-                        }
-                        .frame(height: 145)
+            if let url = poke.sprites?.versions.generationV?.blackWhite?.animated?.front_default {
+                 GIF(url: url)
+            } else if let source = poke.sprites?.front_default, let url = URL(string: source) {
+                AsyncImage(url: url) { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                } placeholder: {
+                    VStack{
+                        Load()
                     }
+                    .frame(height: 145)
                 }
+            }
         }
     }
 }
@@ -51,7 +53,7 @@ struct DetailsPokeImage_Previews: PreviewProvider {
                         front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
                         versions: VersionsSprites(
                             generationV: GenerationV(
-                                blackWhite: SpriteBlacWhite(
+                                blackWhite: SpriteBlackWhite(
                                     animated: SpriteAnimated(
                                         back_shiny: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/back/shiny/6.gif",
                                         back_female: nil,

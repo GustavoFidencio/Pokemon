@@ -33,6 +33,8 @@ struct HomeListItem: View {
                         Load()
                     } else {
                         HomeImage(poke: viewModel.poke)
+//                        DetailsPokeImage(poke: viewModel.poke)
+//                            .frame(width: 40, height: 100)
                         Text(Poke.name.capitalize)
                             .font(.headline)
                             .foregroundColor(.primary)

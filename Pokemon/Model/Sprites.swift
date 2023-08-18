@@ -18,16 +18,24 @@ struct SpriteAnimated: Codable{
     let front_shiny_female: String?
 }
 
-struct SpriteBlacWhite: Codable{
+struct SpriteBlackWhite: Codable{
     let animated: SpriteAnimated?
 }
 
 struct GenerationV: Codable{
-    let blackWhite: SpriteBlacWhite?
+    let blackWhite: SpriteBlackWhite?
+    
+    enum CodingKeys: String, CodingKey {
+        case blackWhite = "black-white"
+    }
 }
 
 struct VersionsSprites: Codable{
     let generationV: GenerationV?
+    
+    enum CodingKeys: String, CodingKey {
+        case generationV = "generation-v"
+    }
 }
 
 struct Sprites: Codable{

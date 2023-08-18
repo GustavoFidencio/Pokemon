@@ -41,7 +41,7 @@ struct detailsPoke_Previews: PreviewProvider {
                         front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
                         versions: VersionsSprites(
                             generationV: GenerationV(
-                                blackWhite: SpriteBlacWhite(
+                                blackWhite: SpriteBlackWhite(
                                     animated: SpriteAnimated(
                                         back_shiny: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/back/shiny/6.gif",
                                         back_female: nil,
