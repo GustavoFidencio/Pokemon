@@ -18,30 +18,32 @@ struct HomeListItem: View {
         self.viewModel = PokeViewModel(url: self.Poke.url)
     }
     
-    
     private func getColor(_ name: String) {
         let type = TypesPoke(rawValue: name.lowercased())
         self.backgroundColor = ColorsTypes.getColor(type: type!)
    }
     
     var body: some View {
-        ZStack {
-            Color(UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all)
-            Color(hex: backgroundColor).opacity(0.25).edgesIgnoringSafeArea(.all)
-            VStack {
-                if viewModel.isLoad {
-                    Load()
-                } else {
-                    HomeImage(poke: viewModel.poke)
-                    Text(Poke.name.capitalize)
-                        .font(.headline)
+        NavigationLink(destination: DetailsPoke(poke: viewModel.poke)) {
+            ZStack {
+                Color(UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all)
+                Color(hex: backgroundColor).opacity(0.25).edgesIgnoringSafeArea(.all)
+                VStack {
+                    if viewModel.isLoad {
+                        Load()
+                    } else {
+                        HomeImage(poke: viewModel.poke)
+                        Text(Poke.name.capitalize)
+                            .font(.headline)
+                            .foregroundColor(.primary)
+                    }
                 }
+                .padding(20)
+                .edgesIgnoringSafeArea(.all)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            .padding(20)
-            .edgesIgnoringSafeArea(.all)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .cornerRadius(10)
         }
-        .cornerRadius(10)
         .onChange(of: viewModel.isLoad) { newVal in
             if !newVal {
                 getColor(viewModel.poke.types[0].type.name)
