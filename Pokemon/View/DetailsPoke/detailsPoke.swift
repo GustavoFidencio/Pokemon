@@ -10,16 +10,61 @@ import SwiftUI
 struct DetailsPoke: View {
     
     @State private var poke : Pokemon
+    @State private var background : String
     
-    init(poke: Pokemon) {
+    init(poke: Pokemon, background: String) {
         self.poke = poke
+        self.background = background
     }
     
     var body: some View {
-        VStack{
-            Text(poke.name)
-            DetailsPokeImage(poke: poke)
+        VStack(){
+            Text(poke.name.capitalize)
+                .font(.headline)
+                .foregroundColor(.primary)
+            Text(String(poke.id))
+                .foregroundColor(.primary)
+            ZStack {
+                Color(UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all)
+                Color(hex: background).opacity(0.25).edgesIgnoringSafeArea(.all)
+                DetailsPokeImage(poke: poke)
+            }
+            .frame(maxHeight: 400)
+            .cornerRadius(20)
+            .padding(.horizontal, 20)
+            
+            HStack(spacing: 10){
+                infoPoke()
+                infoPoke()
+                infoPoke()
+                    
+//                    VStack{
+//                        Image(systemName: "arrow.up.and.down")
+//                            .font(.system(size: 20))
+//                        Text(String(poke.height) + " M")
+//                            .foregroundColor(.primary)
+//                    }
+//                    .background(Color(UIColor.secondarySystemBackground))
+//                    .cornerRadius(7)
+//
+//                    VStack{
+//                        Image(systemName: "arrow.up.and.down")
+//                            .font(.system(size: 20))
+//                        Text(String(poke.base_experience) + " XP")
+//                            .foregroundColor(.primary)
+//                    }
+//                    .background(Color(UIColor.secondarySystemBackground))
+//                    .cornerRadius(7)
+                
+            }
+            .padding(.horizontal, 20)
+            .padding(.vertical, 5)
+            .frame(maxWidth: .infinity)
+            
+            
+            
         }
+        .frame(maxHeight: .infinity)
     }
 }
 
@@ -61,7 +106,8 @@ struct detailsPoke_Previews: PreviewProvider {
                 is_default: true,
                 base_experience: 267,
                 location_area_encounters: "https://pokeapi.co/api/v2/pokemon/6/encounters"
-            )
+            ),
+                    background: "#f27d0c"
         )
     }
 }

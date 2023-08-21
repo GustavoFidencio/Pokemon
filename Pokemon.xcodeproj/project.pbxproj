@@ -10,6 +10,7 @@
 		891216862A8E46C70071987F /* Captalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891216852A8E46C70071987F /* Captalize.swift */; };
 		892D53E82A8A90CA0039E9D4 /* home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D53E72A8A90CA0039E9D4 /* home.swift */; };
 		892D53F22A8AA24A0039E9D4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 892D53F12A8AA24A0039E9D4 /* Colors.xcassets */; };
+		8939AF482A93FF3500C073F8 /* infoPoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8939AF472A93FF3500C073F8 /* infoPoke.swift */; };
 		894C23E52A8E8BE000CF4F82 /* HomeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894C23E42A8E8BE000CF4F82 /* HomeList.swift */; };
 		894C23E82A8E927D00CF4F82 /* Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894C23E72A8E927D00CF4F82 /* Load.swift */; };
 		894C23EA2A8E95EC00CF4F82 /* HomeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894C23E92A8E95EC00CF4F82 /* HomeImage.swift */; };
@@ -35,6 +36,7 @@
 		891216852A8E46C70071987F /* Captalize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Captalize.swift; sourceTree = "<group>"; };
 		892D53E72A8A90CA0039E9D4 /* home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = home.swift; sourceTree = "<group>"; };
 		892D53F12A8AA24A0039E9D4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		8939AF472A93FF3500C073F8 /* infoPoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoPoke.swift; sourceTree = "<group>"; };
 		894C23E42A8E8BE000CF4F82 /* HomeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeList.swift; sourceTree = "<group>"; };
 		894C23E72A8E927D00CF4F82 /* Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Load.swift; sourceTree = "<group>"; };
 		894C23E92A8E95EC00CF4F82 /* HomeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeImage.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				894C23F82A8FBBD800CF4F82 /* DetailsPokeImage.swift */,
+				8939AF472A93FF3500C073F8 /* infoPoke.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				894C23F12A8EACB100CF4F82 /* Hexadecimal.swift in Sources */,
 				894C23EF2A8EA10F00CF4F82 /* GetColorByType.swift in Sources */,
 				894C23FE2A8FE4A400CF4F82 /* GifImage.swift in Sources */,
+				8939AF482A93FF3500C073F8 /* infoPoke.swift in Sources */,
 				894C23E82A8E927D00CF4F82 /* Load.swift in Sources */,
 				896AF1362A8CF47B004A6818 /* HomeListItem.swift in Sources */,
 				894C23F92A8FBBD800CF4F82 /* DetailsPokeImage.swift in Sources */,

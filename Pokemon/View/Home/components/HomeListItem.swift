@@ -24,7 +24,7 @@ struct HomeListItem: View {
    }
     
     var body: some View {
-        NavigationLink(destination: DetailsPoke(poke: viewModel.poke)) {
+        NavigationLink(destination: DetailsPoke(poke: viewModel.poke, background: backgroundColor)) {
             ZStack {
                 Color(UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all)
                 Color(hex: backgroundColor).opacity(0.25).edgesIgnoringSafeArea(.all)
