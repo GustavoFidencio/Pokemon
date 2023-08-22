@@ -14,7 +14,7 @@ struct Home: View {
     var body: some View {
         NavigationView {
             if viewModel.isLoad { Load() }
-            else { HomeList(pokes: viewModel.pokes) }
+            else { HomeList(viewModel: viewModel) }
         }
         .onAppear {
             viewModel.getPokes()

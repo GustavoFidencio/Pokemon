@@ -33,8 +33,6 @@ struct HomeListItem: View {
                         Load()
                     } else {
                         HomeImage(poke: viewModel.poke)
-//                        DetailsPokeImage(poke: viewModel.poke)
-//                            .frame(width: 40, height: 100)
                         Text(Poke.name.capitalize)
                             .font(.headline)
                             .foregroundColor(.primary)
@@ -56,7 +54,7 @@ struct HomeListItem: View {
 
 struct HomeListItem_Previews: PreviewProvider {
     static var previews: some View {
-        let pokeone = SimplePoke(url: "https://pokeapi.co/api/v2/pokemon/2/", name: "ivysaur")
+        let pokeone = SimplePoke(id: UUID(), url: "https://pokeapi.co/api/v2/pokemon/2/", name: "ivysaur")
         Home()
             .previewDisplayName("Light Theme")
             .environment(\.colorScheme, .light) // Tema claro

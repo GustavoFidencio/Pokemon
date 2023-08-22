@@ -7,11 +7,13 @@
 
 import Foundation
 
-struct SimplePoke: Codable {
+struct SimplePoke: Identifiable, Codable {
+    var id: UUID?
     let url: String
     let name: String
     
-    init(url: String, name: String) {
+    init(id: UUID = UUID(), url: String, name: String) {
+        self.id = id
         self.url = url
         self.name = name
     }

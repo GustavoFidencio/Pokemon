@@ -9,23 +9,33 @@ import SwiftUI
 
 struct HomeList: View {
     
-    var pokes : [SimplePoke]
+    @ObservedObject var viewModel : HomeViewModel
     
-    init(pokes:  [SimplePoke]) {
-        self.pokes = pokes
+    init(viewModel:  HomeViewModel) {
+        self.viewModel = viewModel
     }
     
     var body: some View {
-        ScrollView{
-            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                ForEach(pokes.indices, id: \.self){ item in
-                    HomeListItem(Poke: pokes[item])
+        ScrollViewReader { scrollViewProxy in
+            ScrollView{
+                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
+                    ForEach(Array(viewModel.pokes.enumerated()), id: \.element.id){ index, poke in
+                        HomeListItem(Poke: poke)
+                            .onAppear {
+                                if index == viewModel.pokes.count - 6 { // You can adjust the index as needed
+//                                    self.reachedEnd = true
+//                                    print("tamo no fimmmmm")
+                                    viewModel.getPokes(next: true)
+                                    // Perform your action here when reaching the end
+                                }
+                            }
+                    }
                 }
+                .padding()
             }
-            .padding()
+            .listStyle(PlainListStyle())
+            .navigationTitle("Home")
         }
-        .listStyle(PlainListStyle())
-        .navigationTitle("Home")
     }
 }
 
