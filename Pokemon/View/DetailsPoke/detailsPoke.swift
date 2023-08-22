@@ -29,47 +29,33 @@ struct DetailsPoke: View {
                 Color(hex: background).opacity(0.25).edgesIgnoringSafeArea(.all)
                 DetailsPokeImage(poke: poke)
             }
-            .frame(maxHeight: 400)
+            .frame(height: 400)
             .cornerRadius(20)
             .padding(.horizontal, 20)
-            
             HStack(spacing: 10){
-                infoPoke()
-                infoPoke()
-                infoPoke()
-                    
-//                    VStack{
-//                        Image(systemName: "arrow.up.and.down")
-//                            .font(.system(size: 20))
-//                        Text(String(poke.height) + " M")
-//                            .foregroundColor(.primary)
-//                    }
-//                    .background(Color(UIColor.secondarySystemBackground))
-//                    .cornerRadius(7)
-//
-//                    VStack{
-//                        Image(systemName: "arrow.up.and.down")
-//                            .font(.system(size: 20))
-//                        Text(String(poke.base_experience) + " XP")
-//                            .foregroundColor(.primary)
-//                    }
-//                    .background(Color(UIColor.secondarySystemBackground))
-//                    .cornerRadius(7)
-                
+                infoPoke(val: String(poke.weight), icon: "scalemass.fill")
+                infoPoke(val: String(poke.height) + " M", icon: "arrow.up.and.down")
+                infoPoke(val: String(poke.base_experience) + " XP", icon: "star.fill")
             }
             .padding(.horizontal, 20)
-            .padding(.vertical, 5)
+            .padding(.top, 5)
             .frame(maxWidth: .infinity)
             
-            
-            
+            List(poke.stats.indices, id: \.self) { item in
+                Text(poke.stats[item].stat.name + " " + String(poke.stats[item].base_stat))
+                    .foregroundColor(Color.black)
+            }
+            .listStyle(.plain)
+            .padding(.top, -30)
         }
         .frame(maxHeight: .infinity)
+        .padding(.top, -70)
     }
 }
 
 struct detailsPoke_Previews: PreviewProvider {
     static var previews: some View {
+        Home()
         DetailsPoke(poke:
             Pokemon(
                 id: 6,
@@ -103,6 +89,14 @@ struct detailsPoke_Previews: PreviewProvider {
                         back_shiny_female: "back_shiny_female_url",
                         front_shiny_female: "front_shiny_female_url"
                     ),
+                stats:[
+                    Stats(
+                        stat: Stat(url: "https://pokeapi.co/api/v2/stat/1/", name: "hp"),
+                        effort: 0,
+                        base_stat: 78
+                    )
+
+                ],
                 is_default: true,
                 base_experience: 267,
                 location_area_encounters: "https://pokeapi.co/api/v2/pokemon/6/encounters"
